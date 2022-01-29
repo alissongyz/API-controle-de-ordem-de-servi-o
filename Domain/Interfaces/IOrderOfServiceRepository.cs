@@ -11,12 +11,12 @@ namespace ProjectOs.Domain.Interface
 
         Task<IEnumerable<OrderOfService>> GetAllOrderOfServiceAsync(DateTime dataOpeningOSInicial, DateTime dataOpeningOSFinal, int? page);
 
-        Task<OrderOfService> GetOneOrderOfServiceAsync(Guid id);
+        Task<OrderOfService> GetOneOrderOfServiceAsync(string id);
 
         Task CreateOrderOfServiceAsync(OrderOfService orderOfService);
 
         Task UpdateOrderOfServiceAsync(OrderOfService orderOfService);
 
-        Task DeleteOrderOfServiceAsync(Guid id);
+        Task DeleteOrderOfServiceAsync(string id);
     }
 }

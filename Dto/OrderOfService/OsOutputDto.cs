@@ -5,7 +5,7 @@ namespace ProjectOs.Dto.OrderOfService
 {
     public class OsOutputDto
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         public DateTime DataOpeningaOS { get; set; }
 

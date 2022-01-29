@@ -47,7 +47,7 @@ namespace ProjectOs.Controllers
         [Route("{id}")]
         [AllowAnonymous]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OsOutputDto))]
-        public async Task<ActionResult> GetOneOS(Guid id)
+        public async Task<ActionResult> GetOneOS(string id)
         {
             var orderOfService = await repository.GetOneOrderOfServiceAsync(id);
 
@@ -75,7 +75,7 @@ namespace ProjectOs.Controllers
         [Route("{id}")]
         [AllowAnonymous]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UpdateOsDto))]
-        public async Task<ActionResult> UpdateOs(Guid id, [FromBody] UpdateOsDto updateOSModel)
+        public async Task<ActionResult> UpdateOs(string id, [FromBody] UpdateOsDto updateOSModel)
         {
             var orderOfServiceExisting = await repository.GetOneOrderOfServiceAsync(id);
 
@@ -94,7 +94,7 @@ namespace ProjectOs.Controllers
         [HttpDelete]
         [Route("{id}")]
         [AllowAnonymous]
-        public async Task<ActionResult> DeleteOs(Guid id)
+        public async Task<ActionResult> DeleteOs(string id)
         {
             var existingOs = await repository.GetOneOrderOfServiceAsync(id);
 

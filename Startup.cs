@@ -41,6 +41,7 @@ namespace ProjectOs
             services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
             services.AddTransient<IMailRepository, MailRepository>();
 
+            // Config de Repositório
             services.AddSingleton<IOrderOfServiceRepository, OrderOfServiceRepository>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

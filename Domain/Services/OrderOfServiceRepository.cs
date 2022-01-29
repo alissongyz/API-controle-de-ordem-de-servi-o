@@ -51,7 +51,7 @@ namespace ProjectOs.Domain.Services
             return await find.Skip((pagina - 1) * pageSize).Limit(pageSize).ToListAsync();
         }
 
-        public async Task<OrderOfService> GetOneOrderOfServiceAsync(Guid id)
+        public async Task<OrderOfService> GetOneOrderOfServiceAsync(string id)
         {
             var filter = filterBuilder.Eq(orderOfService => orderOfService.Id, id);
             return await OSCollection.Find(filter).SingleOrDefaultAsync();
@@ -68,7 +68,7 @@ namespace ProjectOs.Domain.Services
             await OSCollection.ReplaceOneAsync(filter, orderOfService);
         }
 
-        public async Task DeleteOrderOfServiceAsync(Guid id)
+        public async Task DeleteOrderOfServiceAsync(string id)
         {
             var filter = filterBuilder.Eq(orderOfService => orderOfService.Id, id);
             await OSCollection.DeleteOneAsync(filter);
